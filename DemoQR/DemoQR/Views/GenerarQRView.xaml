@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoQR.Views.GenerarQRView"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxcommon="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             Title="Generar códigos">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Escribe el código" />
+
+            <Entry Text="{Binding Codigo, Mode=TwoWay}"
+                   WidthRequest="100"/>
+
+            <Button Text="Generar" Command="{Binding ComandoGenerarCodigo}" />
+
+            <zxing:ZXingBarcodeImageView 
+                BarcodeFormat="QR_CODE"
+                BarcodeValue="{Binding CodigoConvertido}"
+                AutomationId="zxingBarcodeImageView"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="200"
+                VerticalOptions="Center">
+                <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxcommon:EncodingOptions Width="200" Height="200"/>
+                </zxing:ZXingBarcodeImageView.BarcodeOptions>
+            </zxing:ZXingBarcodeImageView>
+
+            <Button Text="Guardar" Command="{Binding ComandoGuardar}"/>
+            <Button Text="Compartir" Command="{Binding ComandoCompartir}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

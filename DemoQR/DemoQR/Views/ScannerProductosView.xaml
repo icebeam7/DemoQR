@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoQR.Views.ScannerProductosView"
+             Title="Escaneo de códigos">
+    <ContentPage.Content>
+        <StackLayout Margin="10" Padding="10" Spacing="10">
+            <Button Text="Escanear" Command="{Binding ComandoEscanear}" />
+
+            <Label Text="Resultado" />
+            <Label FontAttributes="Bold" FontSize="Large"
+                   Text="{Binding Resultado}" TextColor="Blue"/>
+
+            <Label Text="Producto" />
+            <Label FontAttributes="Italic" FontSize="Medium"
+                   Text="{Binding Producto.Nombre}" TextColor="DarkGreen" />
+
+            <Image Source="{Binding Imagen1}" WidthRequest="150" HeightRequest="150"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoQR.Views.AnalizarQRView"
+             Title="Análisis de códigos">
+    <ContentPage.Content>
+        <StackLayout Margin="10" Padding="10" Spacing="10">
+            <Button Text="Elegir" Command="{Binding ComandoElegir}" />
+            <Image Source="{Binding Imagen1}" WidthRequest="150" HeightRequest="150"/>
+            <Button Text="Analizar" Command="{Binding ComandoAnalizar}" />
+
+            <Label Text="Resultado" />
+            <Label FontAttributes="Bold" FontSize="Large"
+                   Text="{Binding Resultado}" TextColor="Blue"/>
+
+            <Label Text="Producto" />
+            <Label FontAttributes="Italic" FontSize="Medium"
+                   Text="{Binding Producto.Nombre}" TextColor="DarkGreen" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
